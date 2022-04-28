@@ -1,6 +1,6 @@
 ## Welcome to GitHub Pages
 
-[Introductory Physics I Mechanics](https://rtlines.github.io/PH121_Text_Book_0.31071.pdf) <br />
+[Chapter 6](https://github.com/rtlines/Principles-of-Physics-I/blob/main/Chapter_6/PH121_Book_parts.html) <br />
 You can use the [editor on GitHub](https://github.com/rtlines/Principles-of-Physics-I/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
