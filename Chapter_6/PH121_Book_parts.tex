@@ -1,0 +1,1198 @@
+\documentclass[]{Book}
+% The BYUPhys class is for producing theses and dissertations
+% in the BYU Department of Physics and Astronomy.  You can supply
+% the following optional arguments in the square brackets to
+% specify the thesis type:
+%
+%   senior  : Produces the senior thesis preliminary pages (default)
+%   honors  : Produces the honors thesis preliminary pages
+%   masters : Produces the masters thesis preliminary pages
+%   phd     : Produces the PhD dissertation preliminary pages
+%
+% The default format is appropriate for printing, with blank pages
+% inserted after the preliminary pages in twoside mode so you can
+% send it directly to a two-sided printer. However, for ETD
+% submission the blank pages need to be removed from the final output.
+% The following option does this for you:
+%
+%   etd     : Produces a copy with no blank pages in the preliminary section.
+%             Remove this option to produce a version with blank pages inserted
+%             for easy double sided printing.
+%
+% The rest of the class options are the same as the regular book class.
+% A few to remember:
+%
+%   oneside : Produces single sided print layout (recommended for theses less than 50 pages)
+%   twoside : Produces single sided print layout (the default if you remove oneside)
+%
+% The BYUPhys class provides the following macros:
+%
+%   \makepreliminarypages : Makes the preliminary pages
+%   \clearemptydoublepage : same as \cleardoublepage but doesn't put page numbers
+%                           on blank intervening pages
+%   \singlespace          : switch to single spaced lines
+%   \doublespace          : switch to double spaced lines
+%
+% --------------------------- Load Packages ---------------------------------
+
+% The graphicx package allows the inclusion of figures.  Plain LaTeX and
+% pdfLaTeX handle graphics differently. The following code checks which one
+% you are compiling with, and switches the graphicx package options accordingly.
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex]{graphicx}
+\else
+  \usepackage[dvips]{graphicx}
+\fi
+
+% The fancyhdr package allows you to easily customize the page header.
+% The settings below produce a nice, well separated header.
+\usepackage{fancyhdr}
+  \fancyhead{}
+  \fancyhead[LO]{\slshape \rightmark}
+  \fancyhead[RO,LE]{\textbf{\thepage}}
+  \fancyhead[RE]{\slshape \leftmark}
+  \fancyfoot{}
+  \pagestyle{fancy}
+  \renewcommand{\chaptermark}[1]{\markboth{\chaptername \ \thechapter \ \ #1}{}}
+  \renewcommand{\sectionmark}[1]{\markright{\thesection \ \ #1}}
+
+% The caption package allows us to change the formatting of figure captions.
+% The commands here change to the suggested caption format: single spaced and a bold tag
+\usepackage[margin=0.3in,labelfont=bf,labelsep=none]{caption}
+ \DeclareCaptionFormat{suggested}{\singlespace#1#2 #3\par\doublespace}
+ \captionsetup{format=suggested}
+
+% The cite package cleans up the way citations are handled.  For example, it
+% changes the citation [1,2,3,6,7,8,9,10,11] into [1-3,6-11].  If your advisor
+% wants superscript citations, use the overcite package instead of the cite package.
+\usepackage[noadjust]{cite}
+
+% The makeidx package makes your index for you.  To make an index entry,
+% go to the place in the book that should be referenced and type
+%  \index{key}
+% An index entry labeled "key" (or whatever you type) will then
+% be included and point to the correct page.
+\usepackage{makeidx}
+\makeindex
+
+% The url package allows for the nice typesetting of URLs.  Since URLs are often
+% long with no spaces, they mess up line wrapping.  The command \url{http://www.physics.byu.edu}
+% allows LaTeX to break the url across lines at appropriate places: e.g. http://www.
+% physics.byu.edu.  This is helpful if you reference web pages.
+\usepackage{url}
+\urlstyle{rm}
+
+% If you have a lot of equations, you might be interested in the amstex package.
+% It defines a number of environments and macros that are helpful for mathematics.
+% We don't do much math in this example, so we haven't used amstex here.
+\usepackage{amsmath}
+
+% If you need chemistry symbols you can use \usepackage{mhchem} to make them. They are made in the following way \ce{ H2O }
+\usepackage{mhchem}
+
+
+% The hyperref package provides automatic linking and bookmarking for the table
+% of contents, index, equation references, and figure references.  It must be
+% included for the BYU Physics class to make a properly functioning electronic
+% thesis.  It should be the last package loaded if possible.
+%
+% To include a link in your pdf use \href{URL}{Text to be displayed}.  If your
+% display text is the URL, you probably should use the \url{} command discussed
+% above.
+%
+% To add a bookmark in the pdf you can use \pdfbookmark.  You can look up its usage
+% in the hyperref package documentation
+\usepackage[bookmarksnumbered,pdfpagelabels=true,plainpages=false,colorlinks=true,
+            linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+
+% ------------------------- Fill in these fields for the preliminary pages ----------------------------
+%
+% try to fix the tci macro problem
+\input{tcilatex}
+\begin{document}
+\chapter{Problem Solving in Physics}
+
+So far we have learned to draw motion diagrams, and we have learned that we
+can know a lot about the motion of an object by drawing a motion diagram.
+But we want to apply the power of mathematics to finding the motion of an
+object. It is time to get ready to do that.
+
+We already know a few basic equations, like our equations for displacement
+and velocity, and we will learn many more. In what follows for this lecture,
+I will outline a proven problem solving process, then explain the parts of
+the process, then give an example of following that process.
+
+\section{Parts of a problem:}
+
+Here are the steps of our problem solving process. You received a copy of
+this process as part of the Syllabus package on the first day and it is
+posted on I-Learn under \emph{Course Description}. Here is another copy in figure \ref{fig: PSP}
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{Problem_Solving_Process}	
+		\caption{Problem Solving Process}
+		\label{fig:PSP}
+	\end{center}
+\end{figure}
+
+
+\section{Restate the Problem}
+
+The first thing to do when working a homework problem (or a problem given to
+you in your job, or a problem to test with an experiment, or whatever
+problem you are assigned to solve), is to restate the problem. You don't get
+as many points if you solve a different problem than was asked! It is
+common, especially on tests, to misread the problem. So take some time and
+make sure you are answering what was asked. In industry, I used to email my
+boss a restatement of each assignment to make sure I\ understood what I had
+been assigned!
+
+\section{Identify the type of Problem}
+
+If you can look at the problem and see it as part of a class of problems,
+then you know which equations to try, and what techniques to attempt. So far
+all we have are displacement, velocity, and acceleration problems. But soon
+we will have many other types.
+
+Suppose you are asked to find the displacement of an object that starts at
+position $x_{i}=5\unit{m}$ and ends at position $x_{f}=12\unit{m}.$ The
+equation 
+\begin{equation*}
+	\overrightarrow{\mathbf{a}}=\frac{\overrightarrow{\Delta \mathbf{v}}}{\Delta
+		t}
+\end{equation*}%
+is a great resource if you are looking for acceleration, but not so great if
+you trying to find the displacement. Identifying that the problem asks for
+displacement helps you realize that the equation 
+\begin{equation*}
+	\Delta x=x_{f}-x_{i}
+\end{equation*}%
+might help.
+
+\section{Drawing the question}
+
+We have spent three lectures learning how to draw diagrams describing
+motion. We will spend more lectures learning how to draw diagrams for force
+problems, and equilibrium problems, and rotational problems. You would think
+it was an art class!
+
+But seriously, learning to express the problem as a visualization is a large
+part of \textquotedblleft doing physics,\textquotedblright\ and the diagram
+is often the key to seeing how to solve the problem. It is tempting to skip
+this step. But you must convince yourself to learn how to make the diagrams
+and to use the diagrams in solving problems.
+
+\subsection{Coordinate Systems}
+
+We need a context in which to describe motion graphically. Like a city map,
+there needs to be a way to tell where we are going and where we have come
+from. In a western city, we often find a city grid with addresses marked
+with a number of streets from a central location. Here in Rexburg we have
+such a system. We have addresses like 300N and 200E. We need such a system
+for our use.
+
+Often we will use a Cartesian coordinate system (much like the Rexburg
+system, which is patterned after a Cartesian system).
+
+We have used this system already in our diagrams (even in the context of
+city blocks).
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{Coordinate_System_1}	
+		\label{fig:Cartesian}
+	\end{center}
+\end{figure}
+We could also make a coordinate system by using the distance from the origin
+and an angle from the x-axis. 
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{Coordinate_System_Polar}	
+		\label{fig:}Polar
+	\end{center}
+\end{figure}
+
+I'm sure
+you will recognize this as the polar coordinate system. And of course you
+recognize our position vectors as just position expressed in polar
+coordinates!
+
+We could extend these to three dimensions (and we will later). Einstein used
+a very complicated curved three dimensional coordinate system to describe
+General Relativity. So what seems like a simple idea can become very
+complicated. Fortunately, we can usually use Cartesian coordinates for most
+of what we will do.
+
+We will need to think about coordinates a bit. Is there really a zero point
+in the universe? If not, then are we always free to choose one?
+
+For distances, we do not believe there is a ultimate zero point. When we get
+to other quantities (like temperature) we will see that sometimes there is a
+physical zero point.
+
+
+We have already noticed that our position vector is really just a use of
+polar coordinates. And in remembering polar coordinates, you probably recall
+that there is trigonometry involved.
+
+Given the triangle below, we recall that 
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{Triangle}	
+		\caption{Triangle}
+		\label{fig:Triangle}
+	\end{center}
+\end{figure}
+
+\begin{equation}
+	\sin \left( \theta \right) =\frac{\text{side opposite }\theta }{\text{%
+			hypotenuse}}=\frac{y}{r}
+\end{equation}
+
+\begin{equation}
+	\cos \left( \theta \right) =\frac{\text{side adjacent to }\theta }{\text{%
+			hypotenuse}}=\frac{x}{r}
+\end{equation}
+
+\begin{equation}
+	\tan \left( \theta \right) =\frac{\text{side opposite }\theta }{\text{side
+			adjacent to }\theta }=\frac{y}{x}
+\end{equation}
+
+Suppose I know $r$ and $\theta $ but not $y,$ I can find $y$ using%
+\begin{equation}
+	y=r\sin \left( \theta \right)
+\end{equation}
+
+We can use cosine and tangent in a similar way.
+
+Suppose we know $r$ and $y,$ but not $\theta .$ We can find this using%
+\begin{equation}
+	\theta =\arcsin \left( \frac{y}{r}\right)
+\end{equation}%
+which is often written as%
+\begin{equation}
+	\theta =\sin ^{-1}\left( \frac{y}{r}\right)
+\end{equation}
+
+Also recall the Pythagorean theorem%
+\begin{equation}
+	r^{2}=x^{2}+y^{2}
+\end{equation}
+
+The combination of these ideas will be used over and over in our study of
+vectors. If you are a little rusty with trig, it is a good idea to look at
+the review in the back of our text book.
+
+A nice way to remember the trig functions is to think of our triangle
+inscribed in a unit circle. The cosine of the angle gives the projection of $%
+r$ onto the $x$ axis. Likewise, the sine functions the projection of $r$
+onto the $y$ axis.
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{Unit_Circle}	
+		\label{fig:Unit_Circle}
+	\end{center}
+\end{figure}
+
+As an example of the use of trig functions, we can use them to convert from
+Cartesian coordinates $(x,y)$ to polar coordinates $\left( r,\theta \right) $%
+. We start with 
+\begin{equation}
+	r=\sqrt{x^{2}+y^{2}}
+\end{equation}%
+from the Pythagorean theorem,
+
+Then we note that 
+\begin{equation}
+	\tan \left( \theta \right) =\frac{x}{y}
+\end{equation}%
+to yield%
+\begin{equation}
+	\theta =\tan ^{-1}\left( \frac{x}{y}\right)
+\end{equation}
+
+You probably remember that we divide circles into angles as shown in the
+figure above. We often divide the circle into $360\unit{%
+	%TCIMACRO{\U{b0}}%
+	%BeginExpansion
+	{{}^\circ}%
+	%EndExpansion
+},$ like 360 pieces of pizza. By adding up $360^{th}$'s if a circle we can
+describe larger angles. This is one way to describe angles. If you took
+trigonometry, you remember that there are other ways to divide the circle.
+One that will be very important to us is the \emph{radian}. It is just a
+slightly bigger pizza piece as a base unit (think of pizza pieces for large
+foot ball players, you want to start with larger basic units for them!).
+Your calculator will do trigonometry in degrees or radians, but you have to
+change the settings to tell the calculator which you want. We will deal with
+radians a great deal later, but for now you should find out how to set your
+calculator in degrees mode.
+
+\section{Defining Variables}
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{Jumping_Man}			
+		\label{fig:Jumping_Man}
+	\end{center}
+\end{figure}
+
+Let's look at our jumping man again. It is a great help to realize what you
+know. Suppose that we know $x_{i}=5\unit{m}$ and $x_{f}=12\unit{m}$ for our
+man. And suppose we want to find the man's total displacement. It is much
+easier to see the known values if we call them out 
+\begin{eqnarray*}
+	x_{i} &=&5\unit{m} \\
+	x_{f} &=&12\unit{m}
+\end{eqnarray*}
+
+By placing these on your paper so you can see them, it is easier to find an
+answer. Seeing the positions like this it is obvious that all you need to do
+is subtract to get the answer. As the problems become more complicated, this
+will be an even more important step. It also lets the grader (or in your
+job, the reader of your report) know what the variable symbols mean. Not
+every field uses the same letters for the same quantities. And we reuse some
+letters! The letter $T$ could be \textquotedblleft
+tension\textquotedblright\ or \textquotedblleft period of
+oscillation.\textquotedblright\ By writing down what the letters mean, you
+avoid confusing yourself and others.
+
+But what kinds of things are variables? Let's take some time to see what
+quantities we might define.
+
+\subsection{Objects}
+
+We have been talking about objects, like our jumping man, the bird, or a
+ball. But what is an object? What is the universe made of?
+
+The startling answer is, we're not entirely sure! Oh, we know that the
+universe is made of stars and planets and galaxies and dust and many other
+things, but what are the things made of?
+
+Answering that question is the job of particle physics, and the answer is
+still in the making. For our study of motion, we will assume there are
+fundamental things in the universe, and more complicated things are made of
+these fundamental things. Lets look at three quantities as our initial
+building blocks. \emph{Mass, Length}, and \emph{Time}.
+
+\subsubsection{Mass}
+
+When we think of an object, we usually think of something that has mass.
+Mass is an amount of matter. Exactly what matter is, still somewhat of a
+question (Job security for Physicists). Einstein equated mass and energy.
+The great experiments at the Conseil Europ\'{e}en pour la Recherche Nucl\'{e}%
+aire (CERN) are trying to understand exactly what mass is. You may have
+heard of the \emph{Higgs boson}, a particle discovered at CERN that gives us
+a hint that our theory of what mass is might be right. But that is current
+on-going research. So for this class we shall take mass as just the amount
+of matter and trust our intuition on what that means. The standard unit of
+mass is the kilogram, abbreviated \textquotedblleft $\unit{kg}.$%
+\textquotedblright\ It is the mass of a standard piece of platinum alloy,
+again kept in France. 
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{Kilogram}			
+		\caption{US National Institute of Standards standard kilogram.}
+		\label{fig:kilogram}
+	\end{center}
+\end{figure}
+
+Note that mass and weight are very different quantities. you can see this if
+we use a bathroom scale. On earth the scale gives a reading that is
+proportional to the amount of matter in our bodies, but if we put it on a
+space craft in orbit, it would not measure any weight at all. Yet the amount
+of matter in our bodies has not changed!%
+
+
+\subsubsection{Length}
+
+Perhaps we should really say \textquotedblleft space\textquotedblright\
+here. We need to have some idea of how far away things are or how long or
+tall things are. In this class our view of space will be that it is a
+container in which things happen. When you study Einstein's Relativity we
+will change that a little, but for now space is a container, and length is a
+measure of how far away in this container something is.
+
+In ancient Egypt, the standard of measuring length was when Pharaoh took his
+ceremonial reed and measured the length of the foundation for the temple (a
+little like our standard kilogram for mass). This might sound strange, but
+in essence this is what we all did until 1960. Prior to this, a meter, our
+unit of length, was defined as one ten millionth of the distance from the
+North Pole to the equator. Since this was not a very practical day-to-day
+measuring device, a standard \textquotedblleft reed\textquotedblright\ (this
+time made of platinum) was kept in France, and meter sticks were made to
+match this standard. There are terrible problems with this! Each stick of a
+different materials changes length with temperature! So in 1983 the meter
+was defined as the distance light traves in vacuum during a time interval of 
+\begin{equation*}
+	\frac{1}{299792458}\unit{s}
+\end{equation*}%
+The abbreviation for meter is \textquotedblleft $\unit{m}.$\textquotedblright
+
+\subsubsection{Time}
+
+You might object that time is not a thing. But we have already used time in
+our study of motion. It must be something! We should define it before we get
+to familiar with using time. But what is time? It turns out that time is
+hard to define. We usually use the idea that time is how long we wait.%
+\footnote{%
+	Feynman, Richard, Robert Leighton, Matthew Sands, \emph{The Feynman Lectures
+		on Physics}, Vol. I, Addison-Sesley, Reading Massachusetts, 1963} That can
+be tricky to measure. Let's start with something simple. How much time will
+you spend in this class today? That is a time we can wait, about an hour.
+But it is harder to answer questions like \textquotedblleft how long does it
+take for light to travel a foot.\textquotedblright\ The answer is about a
+nanosecond. We cannot perceive of times this small. Likewise, we cannot wait
+for a million years (well, we could, but our vantage point might change
+after the first 70 years or so).
+
+To measure time we use events that are \emph{periodic}, that is, they occur
+at regular intervals. An early example is the pendulum of a clock. From a
+fundamental periodic phenomena, we can build up larger or smaller units of
+time.
+
+The current unit is the \emph{second}, abbreviated \textquotedblleft $\unit{s%
+},$\textquotedblright\ which is given as $91926317000$ times the period of
+oscillation of radiation from the cesium atom. Fortunately we can just use a
+clock or watch to measure seconds.
+
+The standard for time is the atomic clock.
+
+
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{Atomic_Clock}
+		\caption{Atomic Clock}
+		\label{fig:AtomicClock}
+	\end{figure}
+
+
+
+\subsection{Derived quantities}
+
+So we have objects made of mass and space (length) and time to use in
+describing their motion.
+
+%TCIMACRO{%
+	%\TeXButton{Question 1.1.1}{\marginpar {
+			%\hspace{-0.5in}
+			%\begin{minipage}[t]{1in}
+			%{\color {blue} \small{Question 1.1.1}}
+			%\end{minipage}
+			%}}}%
+%BeginExpansion
+\marginpar {
+	\hspace{-0.5in}
+	\begin{minipage}[t]{1in}
+		{\color {blue} \small{Question 1.1.1}}
+	\end{minipage}
+}%
+%EndExpansion
+When we combine quantities we derive new quantities that are useful from the
+basic length, time, mass set. For example, speed is a combination of length
+and time.%
+\begin{equation}
+	v=\frac{\Delta x}{\Delta t}
+\end{equation}%
+quantities like acceleration, force, momentum, etc. are derived quantities.
+
+\subsection{Dimensional Analysis}
+
+Analysis of the units in a measurement can be very useful. For example, if
+we take our first equation%
+\begin{equation}
+	v=\frac{\Delta x}{\Delta t}
+\end{equation}%
+and look at the units, we find that $x$ is a length in, say, meters. We find
+that $t$ is a time in, say, seconds. Then when we calculate $v$ we should
+have units of $\unit{m}/\unit{s}.$ If, instead, we have $\unit{m}^{3}$ at
+the end of our calculation, something must have gone wrong! Sometimes it is
+useful to use generic units for our analysis. That is, any length is given a
+unit $L$ and any time is given a unit $T.$ So our equation gives 
+\begin{equation*}
+	\frac{\Delta x}{\Delta t}\Rightarrow \frac{L}{T}
+\end{equation*}%
+To see this lets take and acceleration . It is given by 
+\begin{equation*}
+	a=\frac{\Delta v}{\Delta t}\Rightarrow \frac{\frac{L}{T}}{T}=\frac{L}{T^{2}}
+\end{equation*}%
+so from dimensional analysis, we expect that acceleration would be something
+like 
+\begin{equation*}
+	a=c\frac{x}{t^{2}}
+\end{equation*}%
+and we could deduce that 
+\begin{equation*}
+	x=\frac{1}{c}at^{2}
+\end{equation*}%
+note that I included a constant, $c.$ Dimensional analysis cannot tell you
+the constants in an equation. We will see later that in this case $c=2$ so 
+\begin{equation*}
+	x=\frac{1}{2}at^{2}
+\end{equation*}
+
+We will find out that our dimensional analysis did not hit too far off the
+mark. This is part of the equation for position for an accelerating object.
+
+\subsection{Units}
+
+No value in physics is useful without a unit. For example, if I tell you to
+jump from a height of $100,$ it makes a difference whether it is $100\unit{cm%
+}$ or $100\unit{m}!$ Units tell us what standard was used to make the
+measurement so all who see the result can correctly interpret what it means.
+
+\subsection{System of Units}
+
+You will notice that we have only given metric units. We will use the \emph{%
+	Syst\`{e}me International} or $\emph{SI}$ units. There are, of course, other
+systems of units. We will try to ignore them in this class. Occasionally we
+may use feet for length and slugs (yes, slugs) for mass. we will usually use
+the following SI units for our basic quantities.%
+\begin{equation*}
+	\begin{tabular}{lll}
+		Quantity & Unit & Symbol \\ 
+		Mass & Kilogram & $\unit{kg}$ \\ 
+		Length & meter & $\unit{m}$ \\ 
+		Time & second & $\unit{s}$%
+	\end{tabular}%
+\end{equation*}
+
+The SI system makes use of prefixes to modify the basic unit, like \emph{%
+	centi}meter to mean $1/100$ of a meter. You should be familiar with the
+following prefixes.\medskip 
+\begin{equation*}
+	\begin{tabular}{|l|l|l|l|l|l|l|}
+		\hline
+		Prefix & Symbol & Power &  & Prefix & Symbol & Power \\ \hline
+		nano- & n & $10^{-9}$ &  & giga- & G & $10^{9}$ \\ \hline
+		micro- & $\mu $ & $10^{-6}$ &  & mega- & m & $10^{6}$ \\ \hline
+		mili- & m & $10^{-3}$ &  & kilo- & k & $10^{3}$ \\ \hline
+		centi- & c & $10^{-2}$ &  & deka- & da & $10^{1}$ \\ \hline
+		deci- & d & $10^{-1}$ &  &  &  &  \\ \hline
+	\end{tabular}%
+\end{equation*}
+
+We can already see that our unit for mass, the kilogram, must be 1000 grams.
+A centimeter must be $1/100^{th}$ of a meter. We obviously will need to be
+able to convert from centimeters to meters from time to time. We should be
+able to convert from any prefixed unit to any other prefixed unit. We nee a
+strategy to do this.
+
+\subsection{Unit Conversions}
+
+Let's do a unit conversion that most of you do in your head. Let's convert
+hours to seconds. We know that 
+\begin{equation*}
+	1\unit{h}=60\unit{min}
+\end{equation*}%
+and we know that 
+\begin{equation*}
+	1\unit{min}=60\unit{s}
+\end{equation*}%
+Suppose we have $5$ hours. How many seconds is this?
+
+Most of us would say multiply by $3600,$ and that is right, but let's do it
+one step at a time so you can see the process. I\ want to multiply $5$ by
+something, but I\ can't change the duration. At the end of our calculation,
+it still has to be a wait of $5\unit{h}$ even though we now give the value
+in seconds. For a person waiting $5$ hours and a second one waiting $%
+\allowbreak 18\,000\unit{s}$ they must feel the same amount of time. So we
+need to adjust our $5$ hours by something that does not change the wait.
+
+I\ think you will agree that if I\ multiply by $1$ nothing changes%
+\begin{equation*}
+	5\times 1=5
+\end{equation*}%
+We can do this with units%
+\begin{equation*}
+	5\unit{h}\times 1=5\unit{h}
+\end{equation*}%
+now let's take our equation relating hours to minutes.%
+\begin{equation*}
+	1\unit{h}=60\unit{min}
+\end{equation*}%
+and let me divide by $1\unit{h}$%
+\begin{eqnarray*}
+	\frac{1\unit{h}}{1\unit{h}} &=&\frac{60\unit{min}}{1\unit{h}} \\
+	1 &=&\frac{60\unit{min}}{1\unit{h}}
+\end{eqnarray*}%
+I can multiply by the right hand side of this equation and all I am doing is
+multiplying by $1!$%
+\begin{equation*}
+	5\unit{h}\times \frac{60\unit{min}}{1\unit{h}}=5\unit{h}
+\end{equation*}%
+This still must be true, but let's do the math%
+\begin{equation*}
+	5\unit{h}\times \frac{60\unit{min}}{1\unit{h}}=\allowbreak 300\unit{min}
+\end{equation*}%
+this is how many minutes are in $5$ hours. We can play the same trick with
+minutes to seconds%
+\begin{eqnarray*}
+	\frac{1\unit{min}}{1\unit{min}} &=&\frac{60}{1\unit{min}}\unit{s} \\
+	1 &=&\frac{60\unit{s}}{1\unit{min}}
+\end{eqnarray*}%
+so we can take our $300\unit{min}$ and find out how many seconds we have!%
+\begin{equation*}
+	\allowbreak 300\unit{min}\times \frac{60\unit{s}}{1\unit{min}}=18000.0\unit{s%
+	}
+\end{equation*}%
+Now we could do this all in one equation, using our strange way of writing $%
+1 $ that converts from hours to minutes and our strange way of writing $1$
+that converts from minutes to seconds. 
+\begin{eqnarray*}
+	5\unit{h}\times 1\times 1 &=&5\unit{h} \\
+	5\unit{h}\times \frac{60\unit{min}}{1\unit{h}}\frac{60\unit{s}}{1\unit{min}}
+	&=&18000.0\unit{s}
+\end{eqnarray*}%
+Notice that the units cancel like variables in algebra!
+
+We will treat units like algebraic quantities that can be canceled. Let's do
+another example. We want to convert $10\unit{mi}$ (ten miles) to kilometers.
+We know that 
+\begin{equation}
+	1\unit{mi}=1609\unit{m}
+\end{equation}%
+and we know that 
+\begin{equation}
+	1\unit{km}=1000\unit{m}
+\end{equation}%
+Start with conversion from miles to meters. We recognize that with a small
+use of algebra 
+\begin{equation}
+	1=\frac{1609\unit{m}}{1\unit{mi}}
+\end{equation}%
+then we can write 
+\begin{equation}
+	10\unit{mi}=10\unit{mi}\frac{1609\unit{m}}{1\unit{mi}}=\allowbreak 16\,090%
+	\unit{m}
+\end{equation}
+
+Then we also recognize that 
+\begin{equation}
+	1=\frac{1000\unit{m}}{1\unit{km}}
+\end{equation}%
+or%
+\begin{equation}
+	1=\frac{1\unit{km}}{1000\unit{m}}
+\end{equation}%
+then%
+\begin{equation}
+	\allowbreak 16\,090\unit{m}=16\,090\unit{m}\frac{1\unit{km}}{1000\unit{m}}%
+	=\allowbreak 16090.0\unit{m}
+\end{equation}
+
+so 
+\begin{equation}
+	10\unit{mi}=16\unit{km}
+\end{equation}
+
+We could do this all in one large, chained, conversion%
+\begin{equation}
+	10\unit{mi}=10\unit{mi}\frac{1609\unit{m}}{1\unit{mi}}\frac{1\unit{km}}{1000%
+		\unit{m}}=16\unit{km}
+\end{equation}
+
+If you think about it, to convert units, we have multiplied by $1$ several
+times. So as you multiply to convert units, make sure your factors multiply
+are equal to $1.$
+
+\subsection{Uncertainty in measurements}
+
+In science, we must face the fact that no measurement is completely
+accurate. The reasons for uncertainty are limitations in our human sensory
+system or sensing apparatus. For example, if I measure a square of metal
+with a ruler. I am likely not able to tell the length to better than a tenth
+of a centimeter ($1\unit{mm}$). This is because of inaccuracies in the ruler
+and in my own ability to see the ruler clearly and consistently. So suppose
+I\ have a measurement of $16.3\unit{cm}$. I can really only tell you that
+the measurement is between $16.4\unit{cm}$ and $16.2\unit{cm}.$ we could
+write this as $16.3\pm 0.1\unit{cm}.$ We will study uncertainty in
+measurements in some detail in PH150. But for PH121 we will need some
+provisional rules that let us make a guess on now good our answers are.
+
+\subsubsection{Significant figures}
+
+Scientists have devised a clever way to include the level of uncertainty in
+the statement of the measurement result. This is referred to as \emph{%
+	significant figures} and it basically means to keep only the digits in a
+number that contain well known information. In the above example, we would
+say that in $16.3\unit{cm}$ that the $3$ is the least significant digit. Now
+suppose we use the same ruler to measure the same object, but I\ tell you
+that the measurement is $16.3259357\unit{cm}.$ If we know the measurement is
+only good to $\pm 0.1\unit{cm},$ what can we say about the digits $259357?$
+We can say they are worthless! They are nonsense, so we cleverly leave them
+off! There are a series of rules to tell us which digits are significant. It
+is important to realize that zeros that just mark where the decimal place
+goes are not significant (e.g. in $0.00163\unit{cm}$ the three $0$'s are not
+significant, but in $1.400\unit{cm}$ the digits mean that the measurement is
+known to $\pm 0.001\unit{cm}$).
+
+We usually express numbers in scientific notation.
+
+\subsubsection{Propagation of uncertainty}
+
+Suppose we take two measurements, like measuring the sides of a rectangle. 
+\begin{eqnarray*}
+	l &=&\left( 2.3\pm 0.1\right) \unit{cm} \\
+	w &=&\left( 4.5\pm 0.1\right) \unit{cm}
+\end{eqnarray*}%
+and we wish to find the area%
+\begin{equation*}
+	A=l\times w
+\end{equation*}%
+\begin{eqnarray*}
+	A &=&2.3\unit{cm}\times 4.5\unit{cm} \\
+	&=&\allowbreak 10.\,\allowbreak 35\unit{cm}^{2}
+\end{eqnarray*}%
+But we were a little uncertain about the length and width, wouldn't we also
+be uncertain about the area that we made from the uncertain length and the
+width? Of course there is some uncertainty in the area. Let's see how we
+could deal with this.
+
+The length could have been as much as 
+\begin{equation*}
+	l=2.3\unit{cm}+0.1\unit{cm}=2.\,\allowbreak 4\unit{cm}
+\end{equation*}%
+and the width could be as much as 
+\begin{equation*}
+	w=\left( 4.5+0.1\right) \unit{cm}=4.\,\allowbreak 6\unit{cm}
+\end{equation*}%
+So the area could be as much as 
+\begin{eqnarray*}
+	A_{+} &=&2.4\unit{cm}\times 4.6\unit{cm} \\
+	&=&\allowbreak 11.\,\allowbreak 04\unit{cm}^{2}
+\end{eqnarray*}%
+But the length could be as little as 
+\begin{equation*}
+	l=2.3\unit{cm}-0.1\unit{cm}=2.2\unit{cm}
+\end{equation*}%
+and the width could be as little as 
+\begin{equation*}
+	w=\left( 4.5-0.1\right) \unit{cm}=4.4\unit{cm}
+\end{equation*}%
+So the area could be as little as%
+\begin{eqnarray*}
+	A_{-} &=&2.2\unit{cm}\times 4.4\unit{cm} \\
+	&=&\allowbreak 9.\,\allowbreak 68\unit{cm}^{2}
+\end{eqnarray*}
+
+We can see that these differ by about $\pm 1\unit{cm}^{2}$ total. 
+\begin{equation*}
+	A_{+}-A_{-}=11.\,\allowbreak 04\unit{cm}^{2}-\allowbreak \allowbreak
+	9.\,\allowbreak 68\unit{cm}^{2}=1.\,\allowbreak 36\unit{cm}^{2}
+\end{equation*}%
+Thus the tenths and hundredths places in our calculated area cannot be very
+certain. We drop these and write%
+\begin{equation*}
+	A=\allowbreak 10\pm 1\unit{cm}
+\end{equation*}%
+Notice that our length and width had two digits, 
+\begin{eqnarray*}
+	l &=&\left( 2.3\pm 0.1\right) \unit{cm} \\
+	w &=&\left( 4.5\pm 0.1\right) \unit{cm}
+\end{eqnarray*}%
+with the uncertainty in the second digit, and notice that our answer for the
+area has two digits, and the uncertainty is in the second digit!
+
+In general:
+
+\begin{quotation}
+	\emph{In multiplying or dividing two quantities, the number of significant
+		figures in the product or quotient is the same as the number of significant
+		figures in the least accurate of the factors being combined. }
+\end{quotation}
+
+In our example, $l$ and $w$ both have two significant figures, so the result
+should be limited to two significant figures
+
+For addition and subtraction the rules is:
+
+\begin{quotation}
+	\emph{The number of decimal places in the result should equal the smallest
+		number of decimal places in any term in the sum or difference}.
+	
+	These two rules will help us determine how many digits to keep for most
+	problems. You may know that there are several other rules, and thought we
+	wont derive them like we did for multiplication, we will use them in our
+	problems. Here they are in a table%
+	\begin{equation*}
+		\begin{tabular}{|l|}
+			\hline
+			{\small \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad }\textbf{%
+				Significant Figure Rules} \\ \hline
+			{\small \quad 1. Non-zero digits are always significant} \\ \hline
+			{\small \quad 2. Embedded (i.e. captive) zero-digits are always significant}
+			\\ \hline
+			{\small \quad 3. For the }$number${\small \ zero only the zero-digits after
+				the decimal are significant} \\ \hline
+			{\small \quad 4. Leading zero-digits are not significant} \\ \hline
+			{\small \quad 5. Trailing zero digits:} \\ \hline
+			{\small \qquad If the number has a decimal, the trailing zero digits are
+				significant} \\ \hline
+			{\small \qquad If the number does not have a decimal, the trailing zero
+				digits are not significant} \\ \hline
+			\begin{tabular}{l}
+				{\small 6. The final result of multiplication or division operation should
+					have the same number } \\ 
+				{\small \quad of significant digits as the measured quantity with the least
+					number of significant } \\ 
+				{\small \quad figures used in the calculation.}%
+			\end{tabular}%
+			{\small \ } \\ \hline
+			\begin{tabular}{l}
+				{\small 7. The final result of an addition or subtraction operation should
+					have the same number } \\ 
+				{\small \quad\ digits to the right of the decimal as the measured quantity
+					with the least number of } \\ 
+				{\small \quad\ decimal used in the calculation. }%
+			\end{tabular}%
+			{\small \ } \\ \hline
+			{\small 
+				\begin{tabular}{l}
+					8. For a mixture of operations, work from left to right, do mathematical
+					hierarchy of operations \\ 
+					\quad\ ($\times $\ or $\div ,$\ then $+$\ or $-$).%
+				\end{tabular}
+			} \\ \hline
+		\end{tabular}%
+	\end{equation*}
+\end{quotation}
+
+\section{Basic Equations}
+
+Equations are relationships in physics. The equation 
+\begin{equation*}
+	\overrightarrow{\mathbf{v}}=\frac{\overrightarrow{\Delta \mathbf{x}}}{\Delta
+		t}
+\end{equation*}%
+tells us how the displacement and duration combine to form velocity. These
+equations are our way of expressing motion. They are the tools in our
+toolbox for solving problems. Once you have identified the type of problem
+you have, you can quickly write down a list of equations (tools) that you
+could use to solve that problem. You might write down more equations than
+you end up using for a particular problem. That's OK. You don't empty your
+tool box of all tools but the ones you think you might use when you start a
+fix-up job in your house! You should not do so when starting a problem. List
+your equations, then choose the ones that seem to work given your known
+values in your list of variables.
+
+\section{Solving with symbols}
+
+For years now, you have worked with numbers and answers that are numbers.
+And that is what the teacher was looking for. But in physics the equation is
+the important thing. It tells you how things relate to each other. Let's try
+an example:
+
+\texttt{The initial speed of an object is }$3\unit{m}/\unit{s}$\texttt{\ and
+	it's acceleration is }$2\unit{m}/\unit{s}^{2}$\texttt{\ in the same
+	direction as the velocity. Find the speed half a second after the experiment
+	start.}
+
+We want to start by restating the problem:
+
+\texttt{Find the final speed knowing }$a$\texttt{\ and }$v_{i}$
+
+Next identify the type of problem. I think it is an acceleration problem:
+
+\texttt{PT acceleration}
+
+Next we want to draw the picture
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{Moving_Object_Velocity_Acceleration}			
+
+		\label{fig:Moving_Object_Velocity_Acceleration}
+	\end{center}
+\end{figure}
+
+Our variables list is next:
+
+\texttt{VAR}
+
+\begin{eqnarray*}
+	v_{i} &=&3\frac{\unit{m}}{\unit{s}} \\
+	a &=&2\frac{\unit{m}}{\unit{s}^{2}} \\
+	\Delta t &=&0.5\unit{s}
+\end{eqnarray*}
+
+and now basic equations:
+
+\texttt{BE:}
+
+\begin{equation*}
+	\underline{\overrightarrow{\mathbf{a}}}=\frac{\overrightarrow{\Delta \mathbf{%
+				v}}}{\underline{\Delta t}}
+\end{equation*}%
+\begin{equation*}
+	\overrightarrow{\Delta \mathbf{v}}=\overrightarrow{\mathbf{v}}_{f}-%
+	\underline{\overrightarrow{\mathbf{v}}_{i}}
+\end{equation*}%
+\begin{equation*}
+	\overrightarrow{\mathbf{v}}=\frac{\overrightarrow{\Delta \mathbf{x}}}{\Delta
+		t}
+\end{equation*}%
+\begin{equation*}
+	\overrightarrow{\Delta \mathbf{x}}=\overrightarrow{\mathbf{x}}_{f}-%
+	\overrightarrow{\mathbf{x}}_{i}
+\end{equation*}%
+Note that I\ underlined the known values from my list variables. The first
+two equations have $v_{f}$ in them and they contain my known values, so it
+looks like they are the ones to use in my solution.
+
+\subsection{Solve Algebraically}
+
+Now we try to solve for the speed, but we do so symbolically. We already
+believe that the first two equations in our basic equation list will be
+helpful, so let's start with 
+\begin{equation*}
+	\underline{\overrightarrow{\mathbf{a}}}=\frac{\overrightarrow{\Delta \mathbf{%
+				v}}}{\underline{\Delta t}}
+\end{equation*}%
+and put in 
+\begin{equation*}
+	\overrightarrow{\Delta \mathbf{v}}=\overrightarrow{\mathbf{v}}_{f}-%
+	\underline{\overrightarrow{\mathbf{v}}_{i}}
+\end{equation*}
+
+\begin{equation*}
+	\underline{\overrightarrow{\mathbf{a}}}=\frac{\overrightarrow{\mathbf{v}}%
+		_{f}-\underline{\overrightarrow{\mathbf{v}}_{i}}}{\underline{\Delta t}}
+\end{equation*}%
+At this point I\ recognize that I\ can solve for $v_{f}$ and everything else
+is known. I could plug things in my calculator and have it solve for $v_{f}$
+using numbers, but we won't do that! We will continue with algebra 
+\begin{equation*}
+	\overrightarrow{\mathbf{a}}\Delta t=\overrightarrow{\mathbf{v}}_{f}-%
+	\overrightarrow{\mathbf{v}}_{i}
+\end{equation*}%
+and%
+\begin{equation*}
+	\overrightarrow{\mathbf{a}}\Delta t+\overrightarrow{\mathbf{v}}_{i}=%
+	\overrightarrow{\mathbf{v}}_{f}
+\end{equation*}%
+or%
+\begin{equation*}
+	\overrightarrow{\mathbf{v}}_{f}=\overrightarrow{\mathbf{v}}_{i}+%
+	\overrightarrow{\mathbf{a}}\Delta t
+\end{equation*}%
+Since $\overrightarrow{\mathbf{a}}$ and $\overrightarrow{\mathbf{v}}_{i}$
+are in the same direction, their magnitudes just add so 
+\begin{equation*}
+	v_{f}=v_{i}+a\Delta t
+\end{equation*}
+
+\textbf{This is the symbolic answer.} It has the thing I\ want, $v_{f},$ an
+equals sign, and then symbols for what $v_{f}$ is equal to.
+
+\section{Numeric answer}
+
+The numeric answer is easy. Just plug in numbers to your symbolic answer%
+\begin{equation*}
+	v_{f}=v_{i}+a\Delta t
+\end{equation*}%
+\begin{eqnarray*}
+	v_{f} &=&3\frac{\unit{m}}{\unit{s}}+\left( 2\frac{\unit{m}}{\unit{s}^{2}}%
+	\right) \left( 0.5\unit{s}\right) \\
+	&=&4.0\frac{\unit{m}}{\unit{s}}
+\end{eqnarray*}
+
+\section{Reasonableness check}
+
+If we had gotten $400000000000\unit{m}/\unit{s}$ in our example, we would
+know something went wrong. Nothing can go this fast! It is good to check
+your answer and see if it seems to make sense. But how do we do that? One
+way is to do a quick estimate.
+
+\subsection{Estimates}
+
+
+
+There are times when we simply do not have all the information we need, but
+we need a number for something anyway. There are also times when we wish to
+make a quick calculation (like checking on the reasonableness of a
+calculation). In such cases, we estimate. Many people in science are
+somewhat uncomfortable with estimates, because they are not
+\textquotedblleft correct\textquotedblright\ (In business and politics,
+people may be a little too comfortable with estimates).
+
+Let's do a few examples together.
+
+\subsubsection{Example 1: How many sheets of paper fit between the Earth and
+	Moon?}
+
+To do this calculation, we need to know how far away the Moon is and how
+thick a piece of paper is.%
+\begin{equation}
+	D_{EM}=4000000\unit{km}
+\end{equation}%
+\begin{eqnarray}
+	t &=&\frac{3\unit{mm}}{28}=1.\,\allowbreak 071\,4\times 10^{-4}\unit{m} \\
+	&\approx &\allowbreak 1\times 10^{-4}\unit{m}  \notag
+\end{eqnarray}
+
+so the number of pieces of paper would be%
+\begin{eqnarray}
+	N &=&\frac{D_{EM}}{t}=\frac{4000000\unit{km}}{1\times 10^{-4}\unit{m}}\frac{%
+		1000\unit{m}}{\unit{km}} \\
+	&=&40\,000\,\allowbreak 000\,000\,000  \notag \\
+	&=&4.0\times 10^{13}  \notag \\
+	&\approx &1\times 10^{13}
+\end{eqnarray}
+
+Is this reasonable? Well look at Example 1.7 in the book and see what you
+think (and explain why our answers are different).
+
+\subsubsection{Example 2 How much sand is in the world's beaches?}
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{Beach}			
+		\label{fig:Beach}
+	\end{center}
+\end{figure}
+
+
+
+
+
+We start by looking for a fundamental element of a beach, say, a grain of
+sand. We can calculate the total volume of the beaches, and divide by the
+volume of a grain of sand. This will tell us how many grains of sand there
+are in the world's beaches. If we can get an estimate of the mass of a grain
+of sand, then we can answer how much sand is in the world's beaches.
+
+Lets estimate the grain of sand to have a mass of 
+\begin{equation}
+	m=0.005\unit{kg}
+\end{equation}%
+Let's guess a volume of%
+\begin{equation}
+	V_{s}=\allowbreak 1.0\times 10^{-15}\unit{m}^{3}
+\end{equation}
+We can estimate the length of the world's coastline to be%
+\begin{equation}
+	L=40000000000\unit{m}
+\end{equation}%
+we need the volume of the coast line, lets say the beach is 
+\begin{equation}
+	w=200\unit{m}
+\end{equation}
+wide and 
+\begin{equation}
+	d=10\unit{m}
+\end{equation}
+deep.
+
+Then the volume of the world's beaches would be%
+\begin{eqnarray}
+	V &=&Lwd=\left( 40000000000\unit{m}\right) \left( 200\unit{m}\right) \left(
+	10\unit{m}\right) \\
+	&=&8.0\times 10^{13}\unit{m}^{3}
+\end{eqnarray}
+and the number of grains of sand would be%
+\begin{equation}
+	N=\frac{V}{V_{s}}=\frac{Lwd}{V_{s}}=\allowbreak 8.0\times 10^{28}
+\end{equation}
+
+which gives us%
+\begin{eqnarray}
+	M_{beach} &=&Nm=\left( \allowbreak 8.0\times 10^{28}\right) \left( 0.005%
+	\unit{kg}\right) \\
+	&=&4.0\times 10^{26}\unit{kg}
+\end{eqnarray}
+
+Mass of the Earth
+
+\begin{equation}
+	M_{E}=5.98\times 10^{24}\unit{kg}
+\end{equation}
+
+where did we go wrong?
+
+Consider silicon oxide. It has a density of 
+\begin{equation}
+	\rho =2200\frac{\unit{kg}}{\unit{m}^{3}}
+\end{equation}%
+If our estimate of 
+\begin{equation}
+	m=0.005\unit{kg}
+\end{equation}%
+is good, then we should have used a volume of%
+\begin{eqnarray}
+	V &=&\frac{m}{\rho }=\frac{0.005\unit{kg}}{2200\frac{\unit{kg}}{\unit{m}^{3}}%
+	} \\
+	&=&2.\,\allowbreak 272\,7\times 10^{-6}\allowbreak \unit{m}^{3}
+\end{eqnarray}%
+So one problem is that our estimate of the volume of a grain of sand is very
+bad.
+
+In general, you can be creative in making estimates, but you do have to be
+careful.
+
+\section{Units Check}
+
+We already have discussed units. But it is important to check your units in
+your final answer. In our case, the final units must be a length unit
+divided by a time unit. For speed this must be the case. If we had gotten a
+length unit divided by a time squared, then we would know something went
+wrong in our algebra. If the units don't work the answer is wrong. So
+especially on a test (or in your real job) checking units is important!
+
+\section{Problem Solving Process}
+
+I have assembled all of the problem solving pieces that we have studied into
+a process that leads us to our solution. Here is the process we will use in
+a table:
+
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{Problem_Solving_Process}	
+		\label{fig:PSP2}
+	\end{center}
+\end{figure}
+
+Notice that I have assigned point values to each part. So if you leave out a
+part you will know how many points you will miss. Also notice that there are
+a lot of points for the symbolic answer and only a one for the numeric
+answer. Physics is about relationships that describe motion, the numbers
+just aren't that important. So it is not a winning strategy to only give me
+the numeric answer for a problem. you only get one out of twenty five points!
+
+Also notice that if I\ ask for the mass of a ping pong ball, and you give me
+an answer that is three times the mass of Jupiter, I\ can take off more than
+one point for the very wrong numeric answer! Since you will be doing a
+reasonableness check, you won't have this problem. But what if you don't
+know if an answer is reasonable? Then say you don't know! You will act
+differently as a physicist, engineer, doctor, etc. if you admit in your
+calculations that you are not certain of the result. And this is very
+valuable! It can save your job! So if you are not sure, say so.
+
+We will use this process for the rest of the semester, and this or a similar
+process for PH123, and PH220 (or PH223) and if you are a physicist for the
+rest of your career. This is also the process I used in engineering in
+industry. So it is worth practicing in our problems. It is also how I\ will
+grade the tests!
+ 
+
+ \appendix
+
+
+ \bibliographystyle{phBYU}
+ \bibliography{orbits}
+
+ 
+% \phantomsection \addcontentsline{toc}{chapter}{Index}
+  \renewcommand{\baselinestretch}{1} \small \normalsize
+  \printindex
+
+
+\end{document}

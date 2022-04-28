@@ -1,0 +1,277 @@
+htfcss: cmmi font-style: italic;
+htfcss: cmmib font-style: italic; font-weight: bold;
+htfcss: cmti  font-style: italic;
+htfcss: cmbx  font-weight: bold;
+htfcss: cmbxsl  font-weight: bold; font-style: oblique;
+htfcss: cmtt font-family: monospace,monospace;
+File: PH121_Book_parts.html
+File: PH121_Book_parts.css
+File: PH121_Book_parts.tmp
+File: PH121_Book_parts2.html
+Css: p{margin-top:0;margin-bottom:0}
+Css: p.indent{text-indent:0;}
+Css: p + p{margin-top:1em;}
+Css: p + div, p + pre {margin-top:1em;}
+Css: div + p, pre + p {margin-top:1em;}
+Css: @media print {div.crosslinks {visibility:hidden;}}
+Css: a img { border-top: 0; border-left: 0; border-right: 0; }
+Font_Css("4"): .small-caps{font-variant: small-caps; }
+Font_Css("10"): .htf-cmbx {font-weight: bold; font-style:normal;}
+Font_Css("12"): .htf-calligraphy {font-family:cursive}
+Font_Css("14"): .htf-italic {font-style: italic;}
+Font_Css("16"): .htf-bold {font-weight: bold;}
+Font_Css("12"): .htf-calligraphy-bold {font-family:cursive ; font-weight: bold; }
+Css: center { margin-top:1em; margin-bottom:1em; }
+Css: td center { margin-top:0em; margin-bottom:0em; }
+Css: .Canvas { position:relative; }
+Css: img.math{vertical-align:middle;}
+Css: li p.indent { text-indent: 0em }
+Css: li p:first-child{ margin-top:0em; }
+Css: li p:last-child, li div:last-child { margin-bottom:0.5em; }
+Css: li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+Css: .enumerate1 {list-style-type:decimal;}
+Css: .enumerate2 {list-style-type:lower-alpha;}
+Css: .enumerate3 {list-style-type:lower-roman;}
+Css: .enumerate4 {list-style-type:upper-alpha;}
+Css: div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+Css: .obeylines-h,.obeylines-v {white-space: nowrap; }
+Css: div.obeylines-v p { margin-top:0; margin-bottom:0; }
+Css: .overline{ text-decoration:overline; }
+Css: .overline img{ border-top: 1px solid black; }
+Css: td.displaylines {text-align:center; white-space:nowrap;}
+Css: .centerline {text-align:center;}
+Css: .rightline {text-align:right;}
+Css: div.verbatim {font-family: monospace,monospace; white-space: nowrap; text-align:left; clear:both; }
+Css: .fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.fbox {display:table}
+Css: div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: div.minipage{width:100%;}
+Css: div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+Css: div.center div {text-align: left;}
+Css: div.flushright, div.flushright div.flushright {text-align: right;}
+Css: div.flushright div {text-align: left;}
+Css: div.flushleft {text-align: left;}
+Css: .underline{ text-decoration:underline; }
+Css: .underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+Css: .framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+Css: .framebox-c {text-align:center;}
+Css: .framebox-l {text-align:left;}
+Css: .framebox-r {text-align:right;}
+Css: span.thank-mark{ vertical-align: super }
+Css: span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+Css: div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+Css: table.tabular td p{margin-top:0em;}
+Css: table.tabular {margin-left: auto; margin-right: auto;}
+Css: td p:first-child{ margin-top:0em; }
+Css: td p:last-child{ margin-bottom:0em; }
+Css: div.td00{ margin-left:0pt; margin-right:0pt; }
+Css: div.td01{ margin-left:0pt; margin-right:5pt; }
+Css: div.td10{ margin-left:5pt; margin-right:0pt; }
+Css: div.td11{ margin-left:5pt; margin-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: td.td00{ padding-left:0pt; padding-right:0pt; }
+Css: td.td01{ padding-left:0pt; padding-right:5pt; }
+Css: td.td10{ padding-left:5pt; padding-right:0pt; }
+Css: td.td11{ padding-left:5pt; padding-right:5pt; }
+Css: table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+Css: .hline hr, .cline hr{ height : 0px; margin:0px; }
+Css: .hline td, .cline td{ padding: 0; }
+Css: .hline hr, .cline hr{border:none;border-top:1px solid black;}
+Css: .tabbing-right {text-align:right;}
+Css: div.float, div.figure {margin-left: auto; margin-right: auto;}
+Css: div.float img {text-align:center;}
+Css: div.figure img {text-align:center;}
+Css: .marginpar,.reversemarginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+Css: .marginpar p,.reversemarginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+Css: .reversemarginpar{float:left;}
+Css: table.equation {width:100%;}
+Css: .equation td{text-align:center; }
+Css: td.equation { margin-top:1em; margin-bottom:1em; } 
+Css: td.equation-label { width:5%; text-align:center; }
+Css: td.eqnarray4 { width:5%; white-space: normal; }
+Css: td.eqnarray2 { width:5%; }
+Css: table.eqnarray-star, table.eqnarray {width:100%;}
+Css: div.eqnarray{text-align:center;}
+Css: div.array {text-align:center;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.pmatrix img{vertical-align:middle;}
+Css: div.pmatrix {text-align:center;}
+Css: table.pmatrix {width:100%;}
+Css: span.bar-css {text-decoration:overline;}
+Css: img.cdots{vertical-align:middle;}
+Css: .partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+Css: .chapterToc a, .chapterToc, .likechapterToc a, .likechapterToc, .appendixToc a, .appendixToc {line-height: 200%; font-weight:bold;}
+Css: .index-item, .index-subitem, .index-subsubitem {display:block}
+Css: div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
+Css: div.caption span.id{font-weight: bold; white-space: nowrap; }
+Css: h1.partHead{text-align: center}
+Css: p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+Css: .paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
+Css: .subparagraphHead, .likesubparagraphHead { font-weight: bold;}
+Css: .quote {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; margin-right:1em; text-align:justify;}
+Css: .verse{white-space:nowrap; margin-left:2em}
+Css: div.maketitle {text-align:center;}
+Css: h2.titleHead{text-align:center;}
+Css: div.maketitle{ margin-bottom: 2em; }
+Css: div.author, div.date {text-align:center;}
+Css: div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; }
+Css: div.author{white-space: nowrap;}
+Css: .quotation {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; }
+Css: h1.partHead{text-align: center}
+Css:  .chapterToc, .likechapterToc {margin-left:0em;}
+Css:  .chapterToc ~ .likesectionToc, .chapterToc ~ .sectionToc, .likechapterToc ~ .likesectionToc, .likechapterToc ~ .sectionToc {margin-left:2em;}
+Css:  .chapterToc ~ .likesectionToc ~ .likesubsectionToc, .chapterToc ~ .likesectionToc ~ .subsectionToc, .chapterToc ~ .sectionToc ~ .likesubsectionToc, .chapterToc ~ .sectionToc ~ .subsectionToc, .likechapterToc ~ .likesectionToc ~ .likesubsectionToc, .likechapterToc ~ .likesectionToc ~ .subsectionToc, .likechapterToc ~ .sectionToc ~ .likesubsectionToc, .likechapterToc ~ .sectionToc ~ .subsectionToc {margin-left:4em;}
+Css: .chapterToc ~ .likesectionToc ~ .likesubsectionToc ~ .likesubsubsectionToc, .chapterToc ~ .likesectionToc ~ .likesubsectionToc ~ .subsubsectionToc, .chapterToc ~ .likesectionToc ~ .subsectionToc ~ .likesubsubsectionToc, .chapterToc ~ .likesectionToc ~ .subsectionToc ~ .subsubsectionToc, .chapterToc ~ .sectionToc ~ .likesubsectionToc ~ .likesubsubsectionToc, .chapterToc ~ .sectionToc ~ .likesubsectionToc ~ .subsubsectionToc, .chapterToc ~ .sectionToc ~ .subsectionToc ~ .likesubsubsectionToc, .chapterToc ~ .sectionToc ~ .subsectionToc ~ .subsubsectionToc, .likechapterToc ~ .likesectionToc ~ .likesubsectionToc ~ .likesubsubsectionToc, .likechapterToc ~ .likesectionToc ~ .likesubsectionToc ~ .subsubsectionToc, .likechapterToc ~ .likesectionToc ~ .subsectionToc ~ .likesubsubsectionToc, .likechapterToc ~ .likesectionToc ~ .subsectionToc ~ .subsubsectionToc, .likechapterToc ~ .sectionToc ~ .likesubsectionToc ~ .likesubsubsectionToc, .likechapterToc ~ .sectionToc ~ .likesubsectionToc ~ .subsubsectionToc, .likechapterToc ~ .sectionToc ~ .subsectionToc ~ .likesubsubsectionToc .likechapterToc ~ .sectionToc ~ .subsectionToc ~ .subsubsectionToc {margin-left:6em;}
+Css:  .likesectionToc , .sectionToc {margin-left:0em;}
+Css:  .likesectionToc ~ .likesubsectionToc, .likesectionToc ~ .subsectionToc, .sectionToc ~ .likesubsectionToc, .sectionToc ~ .subsectionToc {margin-left:2em;}
+Css: .likesectionToc ~ .likesubsectionToc ~ .likesubsubsectionToc, .likesectionToc ~ .likesubsectionToc ~ .subsubsectionToc, .likesectionToc ~ .subsectionToc ~ .likesubsubsectionToc, .likesectionToc ~ .subsectionToc ~ .subsubsectionToc, .sectionToc ~ .likesubsectionToc ~ .likesubsubsectionToc, .sectionToc ~ .likesubsectionToc ~ .subsubsectionToc, .sectionToc ~ .subsectionToc ~ .likesubsubsectionToc, .sectionToc ~ .subsectionToc ~ .subsubsectionToc {margin-left:4em;}
+Css:  .likesubsectionToc, .subsectionToc {margin-left:0em;}
+Css:  .likesubsectionToc ~ .subsubsectionToc, .subsectionToc ~ .subsubsectionToc {margin-left:2em;}
+Css: .rotatebox{display: inline-block;}
+Css: .figure img.graphics {margin-left:10%;}
+Css: .equation td{text-align:center; }
+Css: .equation-star td{text-align:center; }
+Css: table.equation-star { width:100%; }
+Css: table.equation { width:100%; }
+Css: table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:95%; margin-left:5%; white-space: nowrap;}
+Css: table.align-star, table.alignat-star, table.xalignat-star, table.flalign-star {margin-left:auto; margin-right:auto; white-space: nowrap;}
+Css: td.align-label { width:5%; text-align:center; }
+Css: td.align-odd { text-align:right; padding-right:0.3em;}
+Css: td.align-even { text-align:left; padding-right:0.6em;}
+Css: table.multline, table.multline-star {width:100%;}
+Css: td.gather {text-align:center; }
+Css: table.gather {width:100%;}
+Css: div.gather-star {text-align:center;}
+Css: div.FRAME {text-align:center;}
+l. 134 --- needs --- "rungs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -r120 -sDEVICE=pngalpha -sOutputFile="Problem_Solving_Process.png" "Problem_Solving_Process.eps" " ---
+File: Problem_Solving_Process.png
+--- needs --- PH121_Book_parts.idv[2] ==> PH121_Book_parts0x.png ---
+--- needs --- PH121_Book_parts.idv[4] ==> PH121_Book_parts1x.png ---
+l. 204 --- needs --- "rungs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -r120 -sDEVICE=pngalpha -sOutputFile="Coordinate_System_1.png" "Coordinate_System_1.eps" " ---
+File: Coordinate_System_1.png
+l. 213 --- needs --- "rungs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -r120 -sDEVICE=pngalpha -sOutputFile="Coordinate_System_Polar.png" "Coordinate_System_Polar.eps" " ---
+File: Coordinate_System_Polar.png
+l. 245 --- needs --- "rungs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -r120 -sDEVICE=pngalpha -sOutputFile="Triangle.png" "Triangle.eps" " ---
+File: Triangle.png
+--- needs --- PH121_Book_parts.idv[6] ==> PH121_Book_parts2x.png ---
+--- needs --- PH121_Book_parts.idv[8] ==> PH121_Book_parts3x.png ---
+--- needs --- PH121_Book_parts.idv[10] ==> PH121_Book_parts4x.png ---
+--- needs --- PH121_Book_parts.idv[12] ==> PH121_Book_parts5x.png ---
+--- needs --- PH121_Book_parts.idv[14] ==> PH121_Book_parts6x.png ---
+--- needs --- PH121_Book_parts.idv[16] ==> PH121_Book_parts7x.png ---
+--- needs --- PH121_Book_parts.idv[18] ==> PH121_Book_parts8x.png ---
+l. 298 --- needs --- "rungs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -r120 -sDEVICE=pngalpha -sOutputFile="Unit_Circle.png" "Unit_Circle.eps" " ---
+File: Unit_Circle.png
+--- needs --- PH121_Book_parts.idv[20] ==> PH121_Book_parts9x.png ---
+--- needs --- PH121_Book_parts.idv[21] ==> PH121_Book_parts10x.png ---
+--- needs --- PH121_Book_parts.idv[23] ==> PH121_Book_parts11x.png ---
+--- needs --- PH121_Book_parts.idv[25] ==> PH121_Book_parts12x.png ---
+l. 341 --- needs --- "rungs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -r120 -sDEVICE=pngalpha -sOutputFile="Jumping_Man.png" "Jumping_Man.eps" " ---
+File: Jumping_Man.png
+--- needs --- PH121_Book_parts.idv[27] ==> PH121_Book_parts13x.png ---
+l. 401 --- needs --- "rungs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -r120 -sDEVICE=pngalpha -sOutputFile="Kilogram.png" "Kilogram.eps" " ---
+File: Kilogram.png
+--- needs --- PH121_Book_parts.idv[29] ==> PH121_Book_parts14x.png ---
+l. 472 --- needs --- "rungs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -r120 -sDEVICE=pngalpha -sOutputFile="Atomic_Clock.png" "Atomic_Clock.eps" " ---
+File: Atomic_Clock.png
+--- needs --- PH121_Book_parts.idv[31] ==> PH121_Book_parts15x.png ---
+--- needs --- PH121_Book_parts.idv[33] ==> PH121_Book_parts16x.png ---
+--- needs --- PH121_Book_parts.idv[35] ==> PH121_Book_parts17x.png ---
+--- needs --- PH121_Book_parts.idv[36] ==> PH121_Book_parts18x.png ---
+--- needs --- PH121_Book_parts.idv[38] ==> PH121_Book_parts19x.png ---
+--- needs --- PH121_Book_parts.idv[39] ==> PH121_Book_parts20x.png ---
+--- needs --- PH121_Book_parts.idv[40] ==> PH121_Book_parts21x.png ---
+--- needs --- PH121_Book_parts.idv[42] ==> PH121_Book_parts22x.png ---
+--- needs --- PH121_Book_parts.idv[43] ==> PH121_Book_parts23x.png ---
+--- needs --- PH121_Book_parts.idv[45] ==> PH121_Book_parts24x.png ---
+--- needs --- PH121_Book_parts.idv[46] ==> PH121_Book_parts25x.png ---
+--- needs --- PH121_Book_parts.idv[48] ==> PH121_Book_parts26x.png ---
+--- needs --- PH121_Book_parts.idv[49] ==> PH121_Book_parts27x.png ---
+--- needs --- PH121_Book_parts.idv[50] ==> PH121_Book_parts28x.png ---
+--- needs --- PH121_Book_parts.idv[52] ==> PH121_Book_parts29x.png ---
+--- needs --- PH121_Book_parts.idv[53] ==> PH121_Book_parts30x.png ---
+--- needs --- PH121_Book_parts.idv[54] ==> PH121_Book_parts31x.png ---
+--- needs --- PH121_Book_parts.idv[56] ==> PH121_Book_parts32x.png ---
+--- needs --- PH121_Book_parts.idv[57] ==> PH121_Book_parts33x.png ---
+--- needs --- PH121_Book_parts.idv[58] ==> PH121_Book_parts34x.png ---
+--- needs --- PH121_Book_parts.idv[60] ==> PH121_Book_parts35x.png ---
+--- needs --- PH121_Book_parts.idv[62] ==> PH121_Book_parts36x.png ---
+--- needs --- PH121_Book_parts.idv[64] ==> PH121_Book_parts37x.png ---
+--- needs --- PH121_Book_parts.idv[66] ==> PH121_Book_parts38x.png ---
+--- needs --- PH121_Book_parts.idv[68] ==> PH121_Book_parts39x.png ---
+--- needs --- PH121_Book_parts.idv[70] ==> PH121_Book_parts40x.png ---
+--- needs --- PH121_Book_parts.idv[72] ==> PH121_Book_parts41x.png ---
+--- needs --- PH121_Book_parts.idv[74] ==> PH121_Book_parts42x.png ---
+--- needs --- PH121_Book_parts.idv[76] ==> PH121_Book_parts43x.png ---
+--- needs --- PH121_Book_parts.idv[78] ==> PH121_Book_parts44x.png ---
+--- needs --- PH121_Book_parts.idv[79] ==> PH121_Book_parts45x.png ---
+--- needs --- PH121_Book_parts.idv[80] ==> PH121_Book_parts46x.png ---
+--- needs --- PH121_Book_parts.idv[82] ==> PH121_Book_parts47x.png ---
+--- needs --- PH121_Book_parts.idv[83] ==> PH121_Book_parts48x.png ---
+--- needs --- PH121_Book_parts.idv[84] ==> PH121_Book_parts49x.png ---
+--- needs --- PH121_Book_parts.idv[86] ==> PH121_Book_parts50x.png ---
+--- needs --- PH121_Book_parts.idv[87] ==> PH121_Book_parts51x.png ---
+--- needs --- PH121_Book_parts.idv[88] ==> PH121_Book_parts52x.png ---
+--- needs --- PH121_Book_parts.idv[90] ==> PH121_Book_parts53x.png ---
+--- needs --- PH121_Book_parts.idv[91] ==> PH121_Book_parts54x.png ---
+--- needs --- PH121_Book_parts.idv[92] ==> PH121_Book_parts55x.png ---
+Css: div.center-quotation{text-align: center;}
+Css: div.center-quotation{text-align: center;}
+--- needs --- PH121_Book_parts.idv[94] ==> PH121_Book_parts56x.png ---
+--- needs --- PH121_Book_parts.idv[95] ==> PH121_Book_parts57x.png ---
+l. 911 --- needs --- "rungs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -r120 -sDEVICE=pngalpha -sOutputFile="Moving_Object_Velocity_Acceleration.png" "Moving_Object_Velocity_Acceleration.eps" " ---
+File: Moving_Object_Velocity_Acceleration.png
+--- needs --- PH121_Book_parts.idv[97] ==> PH121_Book_parts58x.png ---
+--- needs --- PH121_Book_parts.idv[98] ==> PH121_Book_parts59x.png ---
+--- needs --- PH121_Book_parts.idv[100] ==> PH121_Book_parts60x.png ---
+--- needs --- PH121_Book_parts.idv[101] ==> PH121_Book_parts61x.png ---
+--- needs --- PH121_Book_parts.idv[102] ==> PH121_Book_parts62x.png ---
+--- needs --- PH121_Book_parts.idv[104] ==> PH121_Book_parts63x.png ---
+--- needs --- PH121_Book_parts.idv[105] ==> PH121_Book_parts64x.png ---
+--- needs --- PH121_Book_parts.idv[106] ==> PH121_Book_parts65x.png ---
+--- needs --- PH121_Book_parts.idv[108] ==> PH121_Book_parts66x.png ---
+--- needs --- PH121_Book_parts.idv[109] ==> PH121_Book_parts67x.png ---
+--- needs --- PH121_Book_parts.idv[110] ==> PH121_Book_parts68x.png ---
+--- needs --- PH121_Book_parts.idv[111] ==> PH121_Book_parts69x.png ---
+--- needs --- PH121_Book_parts.idv[112] ==> PH121_Book_parts70x.png ---
+--- needs --- PH121_Book_parts.idv[114] ==> PH121_Book_parts71x.png ---
+--- needs --- PH121_Book_parts.idv[115] ==> PH121_Book_parts72x.png ---
+--- needs --- PH121_Book_parts.idv[116] ==> PH121_Book_parts73x.png ---
+--- needs --- PH121_Book_parts.idv[118] ==> PH121_Book_parts74x.png ---
+--- needs --- PH121_Book_parts.idv[120] ==> PH121_Book_parts75x.png ---
+--- needs --- PH121_Book_parts.idv[121] ==> PH121_Book_parts76x.png ---
+l. 1058 --- needs --- "rungs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -r120 -sDEVICE=pngalpha -sOutputFile="Beach.png" "Beach.eps" " ---
+File: Beach.png
+--- needs --- PH121_Book_parts.idv[123] ==> PH121_Book_parts77x.png ---
+--- needs --- PH121_Book_parts.idv[125] ==> PH121_Book_parts78x.png ---
+--- needs --- PH121_Book_parts.idv[127] ==> PH121_Book_parts79x.png ---
+--- needs --- PH121_Book_parts.idv[129] ==> PH121_Book_parts80x.png ---
+--- needs --- PH121_Book_parts.idv[131] ==> PH121_Book_parts81x.png ---
+--- needs --- PH121_Book_parts.idv[133] ==> PH121_Book_parts82x.png ---
+--- needs --- PH121_Book_parts.idv[134] ==> PH121_Book_parts83x.png ---
+--- needs --- PH121_Book_parts.idv[136] ==> PH121_Book_parts84x.png ---
+--- needs --- PH121_Book_parts.idv[138] ==> PH121_Book_parts85x.png ---
+--- needs --- PH121_Book_parts.idv[140] ==> PH121_Book_parts86x.png ---
+--- needs --- PH121_Book_parts.idv[142] ==> PH121_Book_parts87x.png ---
+--- needs --- PH121_Book_parts.idv[144] ==> PH121_Book_parts88x.png ---
+l. 1158 --- needs --- "rungs -dSAFER -dBATCH -dNOPAUSE -dEPSCrop -r120 -sDEVICE=pngalpha -sOutputFile="Problem_Solving_Process.png" "Problem_Solving_Process.eps" " ---
+File: Problem_Solving_Process.png
+--- characters ---
+Font("cmex","10","10","100")
+Font("cmr","5","5","100")
+Font("cmr","7","7","100")
+Font("cmr","10","10","100")
+Font("cmmi","7","7","100")
+Font("cmmi","10","10","100")
+Font("cmsy","7","7","100")
+Font("cmsy","10","10","100")
+Font("cmtt","10","10","100")
+Font("cmti","10","10","100")
+Font("cmbx","10","10","100")
+Font("cmr","9","9","100")
+Font("cmr","8","8","100")
+Font("cmti","8","8","100")
+Font("cmmi","9","9","100")
+Font("cmsy","9","9","100")
